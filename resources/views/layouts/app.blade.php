@@ -209,7 +209,7 @@
   <!-- Currency -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
-  @include('_partials.flash-swal')
+  @include('_Partials.flash-swal')
 
   <script>
     $(".btn-delete").on("click", function(e) {
