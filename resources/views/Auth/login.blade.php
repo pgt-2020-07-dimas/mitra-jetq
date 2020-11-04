@@ -91,7 +91,7 @@
   
    <!-- SweetAlert2 Js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
-  @include('_partials.flash-swal')
+  @include('_Partials.flash-swal')
 </body>
 
 </html>
