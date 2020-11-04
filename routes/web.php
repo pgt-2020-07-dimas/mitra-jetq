@@ -22,7 +22,7 @@ Route::get('/userdata', function () {
 });
 Route::get('/dashboard', function(){
     $page='Dashboard';
-    return view('dashboard.index',compact('page'));
+    return view('Dashboard.index',compact('page'));
 });
 Route::group(['middleware' => ['AuthCheck']], function () {
 
