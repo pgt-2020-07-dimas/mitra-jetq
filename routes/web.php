@@ -20,13 +20,13 @@ Route::post('/logout', 'AuthController@logout');
 Route::get('/userdata', function () {
     return session()->get('userdata');
 });
-
+Route::get('/dashboard', function(){
+    $page='Dashboard';
+    return view('dashboard.index',compact('page'));
+});
 Route::group(['middleware' => ['AuthCheck']], function () {
 
-    Route::get('/dashboard', function(){
-        $page='Dashboard';
-        return view('dashboard.index',compact('page'));
-    });
+    
     //TRANSACTION
     Route::get('/transaction', 'TransactionController@index');
     Route::get('/transaction/confirmed', 'TransactionController@confirmed');
