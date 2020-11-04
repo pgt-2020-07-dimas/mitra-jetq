@@ -8,7 +8,7 @@ use App\Helper\Helper;
 class AuthController extends Controller
 {
     public function index(){
-        return view('Auth.login');
+        return view('auth.login');
     }
 
     public function login(Request $request){
@@ -18,7 +18,7 @@ class AuthController extends Controller
         ]);
 
         $helper = new Helper();
-        $data = $helper->apiPOST('Auth/login/' , [
+        $data = $helper->apiPOST('auth/login/' , [
                 'form_params' => [
                     'email' => $request->email,
                     'password' => $request->password,
