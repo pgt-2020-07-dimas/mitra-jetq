@@ -1,0 +1,17 @@
+.aircraft-row {
+    cursor: pointer;
+}
+.invoice-row {
+  cursor: pointer;
+}
+.active-row {
+    background-color: #96ccdc;
+    color: #fff;
+}
+.login-logo {
+    max-width: 200px;
+  }
+  .bg-main-color-gradient {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#94ccdc), to(#c1dee4));
+    background-image: linear-gradient(to bottom, #94ccdc, #c1dee4);
+  }
