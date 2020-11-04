@@ -15,10 +15,10 @@ class TransactionController extends Controller
         $data = $helper->apiGET('invoice/',$owner);
         if($data['status']){
             $data = $data['data'];
-            return view('transaction.index',compact('data','page'));
+            return view('Transaction.index',compact('data','page'));
         } else {
             $data = null;
-            return view('transaction.index',compact('data','page'));
+            return view('Transaction.index',compact('data','page'));
         }
     }
     
@@ -30,10 +30,10 @@ class TransactionController extends Controller
         $data = $helper->apiGET('invoice/confirm/',$owner);
         if($data['status']){
             $data = $data['data'];
-            return view('transaction.confirmed',compact('data','page'));
+            return view('Transaction.confirmed',compact('data','page'));
         } else {
             $data = null;
-            return view('transaction.confirmed',compact('data','page'));
+            return view('Transaction.confirmed',compact('data','page'));
         }
     }
 
@@ -45,10 +45,10 @@ class TransactionController extends Controller
         $data = $helper->apiGET('invoice/waiting/',$owner);
         if($data['status']){
             $data = $data['data'];
-            return view('transaction.paid',compact('data','page'));
+            return view('Transaction.paid',compact('data','page'));
         } else {
             $data = null;
-            return view('transaction.paid',compact('data','page'));
+            return view('Transaction.paid',compact('data','page'));
         }
     }
     public function history(){
@@ -59,10 +59,10 @@ class TransactionController extends Controller
         $data = $helper->apiGET('invoice/history/',$owner);
         if($data['status']){
             $data = $data['data'];
-            return view('transaction.history',compact('data','page'));
+            return view('Transaction.history',compact('data','page'));
         } else {
             $data = null;
-            return view('transaction.history',compact('data','page'));
+            return view('Transaction.history',compact('data','page'));
         }
     }
     public function detail($id){

@@ -97,10 +97,10 @@ class AssetController extends Controller
         $data = $helper->apiGET('aircraft/',$owner);        
         if ($data['status'] == true){
             $data = $data['data'];
-            return view('asset.active',compact('data','page'));
+            return view('Asset.active',compact('data','page'));
         } else {
             $data = null;
-            return view('asset.active',compact('data','page'));
+            return view('Asset.active',compact('data','page'));
         }
     }
     public function inactive(){
@@ -111,10 +111,10 @@ class AssetController extends Controller
         $data = $helper->apiGET('aircraft/deactive/',$owner);
         if ($data['status'] == true){
             $data = $data['data'];
-            return view('asset.inactive',compact('data','page'));
+            return view('Asset.inactive',compact('data','page'));
         } else {
             $data = null;
-            return view('asset.inactive',compact('data','page'));
+            return view('Asset.inactive',compact('data','page'));
         }
 
     }
@@ -153,7 +153,7 @@ class AssetController extends Controller
         $data = $helper->apiGET('aircraft/detail/',$id);
         $data = $data['data']['aircraft'];
         //return $data;
-        return view('asset.edit',compact('data','page'));
+        return view('Asset.edit',compact('data','page'));
     }
     public function store(Request $request){
         

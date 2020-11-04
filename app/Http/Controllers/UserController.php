@@ -13,7 +13,7 @@ class UserController extends Controller
         $data = session()->all();
         $data = $data['userdata']['data'];
         //return $data;
-        return view('user.index',compact('page','data'));
+        return view('User.index',compact('page','data'));
     }
     
     public function edit(){
@@ -22,7 +22,7 @@ class UserController extends Controller
         $data = session()->get('userdata');
         $data = $data['data'];
         //return $data;
-        return view('user.edit', compact('page','data'));
+        return view('User.edit', compact('page','data'));
     }
 
     public function update(Request $request){
@@ -39,7 +39,7 @@ class UserController extends Controller
     public function changepassword(Request $request){
         
         $page = 'Change Password';
-        return view('user.changepassword',compact('page'));
+        return view('User.changepassword',compact('page'));
     }
 
     public function updatepassword(Request $request){
