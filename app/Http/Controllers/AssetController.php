@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Helper\Helper;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 // use GuzzleHttp\Client;
 // use GuzzleHttp\Exception\RequestException;
 
@@ -523,5 +524,24 @@ class AssetController extends Controller
             ]);
         $data['status'] == true ? $helper->flashSuccess($data['message']) : $helper->flashError($data['message']);
         return redirect('asset/active');
+    }
+    
+    public function schedule() {
+
+        $page = "Schedule";
+        $helper = new Helper();
+        $owner = $helper->getUID();
+        $data = $helper->apiGET('aircraft/',$owner); 
+        $data = $data['data'];
+        $today = Carbon::now();
+        for($i=0;$i<6;$i++){
+            $addedDay = $today->format('l, d-m-Y');
+            $weeks[] = $addedDay;
+            $today = $today->addDay(1);
+        }
+
+        //return $weeks;die;
+
+        return view('Schedule.index', compact('page','data','weeks'));
     }
 }

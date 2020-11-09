@@ -66,8 +66,6 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
 
 //SCHEDULE
-Route::get('/schedule', function () {
-    return view('schedule.index');
-});
+Route::get('/schedule', 'AssetController@schedule');
 
 
