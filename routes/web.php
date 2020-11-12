@@ -41,7 +41,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/asset', 'AssetController@create');
     Route::get('/', 'AssetController@all');
     Route::post('/asset/store', 'AssetController@store');
-    Route::put('/asset/changestatus','AssetCOntroller@changestatus');
+    Route::put('/asset/changestatus','AssetController@changestatus');
     Route::delete('/asset/delete','AssetCOntroller@delete');
     Route::put('/asset/update', 'AssetController@update');
     Route::post('/asset/addservice', 'AssetController@addservice');
@@ -67,5 +67,11 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
 //SCHEDULE
 Route::get('/schedule', 'AssetController@schedule');
+
+//TEST 
+Route::get('/test', function(){
+
+    return config('app.url');
+});
 
 

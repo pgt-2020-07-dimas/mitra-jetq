@@ -531,8 +531,23 @@ class AssetController extends Controller
         $page = "Schedule";
         $helper = new Helper();
         $owner = $helper->getUID();
-        $data = $helper->apiGET('aircraft/',$owner); 
-        $data = $data['data'];
+        $active = $helper->apiGET('aircraft/',$owner); 
+        if ($active['status'] <> 0){
+            $active = $active['data'];
+        } else {
+            $active = [];
+        }
+        
+        $inactive = $helper->apiGET('aircraft/deactive/',$owner); 
+        if ($inactive['status'] <> 0){
+            $inactive = $inactive['data'];
+        } else {
+            $inactive = [];
+        }
+        
+        $data = array_merge($active,$inactive);
+
+        //return $inactive;die;
         $today = Carbon::now();
         for($i=0;$i<6;$i++){
             $addedDay = $today->format('l, d-m-Y');
@@ -543,5 +558,10 @@ class AssetController extends Controller
         //return $weeks;die;
 
         return view('Schedule.index', compact('page','data','weeks'));
+    }
+
+    public function dashboard(){
+
+        
     }
 }

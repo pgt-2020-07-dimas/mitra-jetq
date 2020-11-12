@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
             <br>
@@ -23,7 +23,7 @@
                     <tbody>
                     @foreach ($data as $d)
                         <tr>
-                            <td class="bg-primary text-white text-center">{{$d['aircraft_name']}} / {{$d['registration_number'] }} / {{$d['aircraft_base']}}</td>
+                            <td class="{{$d['isActive'] == 1 ? 'bg-primary' : 'bg-warning'}} text-white text-center">{{$d['aircraft_name']}} / {{$d['registration_number'] }} / {{$d['aircraft_base']}}</td>
                             <td></td>
                             <td></td>
                             <td></td>

@@ -368,9 +368,7 @@
                         $('.invoice-service-type').text(data['service_type'])
                         $('.invoice-flight-price').text(numeral(data['total_price']).format('$ 0,0'))
 
-                        $('.clicked').val(data['invoice_id'])
-                        $('.btn-confirm-payment').attr('href', "https://mitra.jet-q.com/transaction/status/" + data['invoice_id'] + '/' + 'Pay' + '/' + '4')
-                        $('.btn-reject').attr('href', "https://mitra.jet-q.com/transaction/status/" + data['invoice_id'] + '/' + 'Cancel' + '/' + '0')
+                        $('.clicked').val(data['invoice_id'])us                        
                         $('.btn-complete').attr('href', "https://mitra.jet-q.com/transaction/status/" + data['invoice_id'] + '/' + 'Complete' + '/' + '4')
 
                         $('#price').attr('value', data['total_price'])
