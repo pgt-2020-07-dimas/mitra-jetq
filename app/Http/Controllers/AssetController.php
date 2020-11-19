@@ -87,7 +87,7 @@ class AssetController extends Controller
     
     public function all(){
     
-        $data = $this->apiGET('aircraft/all','');
+        //$data = $this->apiGET('aircraft/all','');
 
     }
     

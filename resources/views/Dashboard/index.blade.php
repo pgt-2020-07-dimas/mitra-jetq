@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <!-- Card -->
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
@@ -106,19 +106,43 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 d-none d-lg-block">
+            <div class="col-lg-4 d-none d-lg-block">
                 <div class="row">
                     <div class="col" style="height:100%;">
-                        <div class="card bg-light mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Calendar</div>
-                            <div class="card-body">
-                                <h5 class="card-title">Here should be calendar</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="container-calendar">
+                            <h5 id="monthAndYear"></h5>
+                            <div class="button-container-calendar">
+                                <button id="previous" onclick="previous()">&#8249;</button>
+                                <button id="next" onclick="next()">&#8250;</button>
+                            </div>
+
+                            <table class="table-calendar" id="calendar" data-lang="en">
+                                <thead id="thead-month"></thead>
+                                <tbody id="calendar-body"></tbody>
+                            </table>
+
+                            <div class="footer-container-calendar">
+                                <label for="month">Jump To: </label>
+                                <select id="month" onchange="jump()">
+                                    <option value=0>Jan</option>
+                                    <option value=1>Feb</option>
+                                    <option value=2>Mar</option>
+                                    <option value=3>Apr</option>
+                                    <option value=4>May</option>
+                                    <option value=5>Jun</option>
+                                    <option value=6>Jul</option>
+                                    <option value=7>Aug</option>
+                                    <option value=8>Sep</option>
+                                    <option value=9>Oct</option>
+                                    <option value=10>Nov</option>
+                                    <option value=11>Dec</option>
+                                </select>
+                                <select id="year" onchange="jump()"></select>
                             </div>
                         </div>
-                    </div>
                 </div>            
             </div>
+        </div>  
         </div>
         <div class="row my-2">
             <div class="col-md-12">
@@ -148,6 +172,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>      
     </div>
 @endsection

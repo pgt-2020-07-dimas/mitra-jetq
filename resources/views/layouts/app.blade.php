@@ -28,6 +28,8 @@
 
   <!-- CSS Manual-->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+  <!-- Calendar CSS -->
+  <link href="{{ asset('assets/css/calendar.css') }}" rel="stylesheet">
   
   <!-- SweetAlert2 CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
@@ -205,6 +207,9 @@
   
   <!-- Javascript manual-->
   <script src="{{ asset('assets/js/script.js') }}"></script>
+
+  <!-- Calendar JS -->
+  <script src="{{ asset('assets/js/calendar.js') }}"></script>
 
   <!-- Moment JS -->
   <script src="{{ asset('assets/js/moment.min.js') }}"></script>
